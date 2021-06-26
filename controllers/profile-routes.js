@@ -10,7 +10,10 @@ router.get('/', async (req, res) => {
     }
     const profile = newUserData.get({ plain: true });
     res.render('profile', { profile, loggedIn: true });
-      
+    
+    const profile = profileData.map((user) => user.get({ plain: true }));
+
+    res.render('profile', { profile, loggedIn: true });
       res.status(200).json({ newUserData });
   
     //   req.session.save(() => {
