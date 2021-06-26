@@ -8,10 +8,10 @@ router.get('/', async (req, res) => {
       res.status(404).json({ message: 'No profile with ID found' });
       return;
     }
-    //const profile = newUserData.get({ plain: true });
+    const profile = newUserData.get({ plain: true });
     res.render('profile', { profile, loggedIn: true });
     
-    const profile = profileData.map((user) => user.get({ plain: true }));
+    //const profile = profileData.map((user) => user.get({ plain: true }));
 
     res.render('profile', { profile, loggedIn: true });
       res.status(200).json({ newUserData });
