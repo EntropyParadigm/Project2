@@ -12,7 +12,8 @@ router.get('/', async (req, res) => {
                 } 
               ] 
       });
-      res.status(200).json({ newUser });
+        res.status(200).json({ newUser });
+         console.log(newUser);
   
     //   req.session.save(() => {
     //     req.session.userId = newUser.id;
@@ -39,6 +40,7 @@ router.get('/profile', async (req, res) => {
               ] 
       });
       res.status(200).json({ newUser });
+      console.log(newUser);
   
     //   req.session.save(() => {
     //     req.session.userId = newUser.id;
