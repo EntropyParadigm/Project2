@@ -25,11 +25,7 @@ router.get('/profile', checkAuth, async (req, res) => {
         res.status(404).json({ message: 'No profile with ID found' });
       return;
       }
-      
-    if (!profileData) {
-      res.status(404).json({ message: 'No profile with ID found' });
-      return;
-    }
+  }
 
     const profile = profileData.map((user) => user.get({ plain: true }));
 
