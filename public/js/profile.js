@@ -1,11 +1,11 @@
-async function newFormHandler(event) {
-    event.preventDefault();
-    const name = document.querySelector('#name').value;
-    const age = document.querySelector('#age').value;
-    const height = document.querySelector('#height').value;
-    const weight = document.querySelector('#weight').value;
+//async function newFormHandler(event) {
+    //event.preventDefault();
+    //const name = document.querySelector('#name').value;
+    //const age = document.querySelector('#age').value;
+    //const height = document.querySelector('#height').value;
+    //const weight = document.querySelector('#weight').value;
     // The following is a ternary operator. It checks to see if workouts is checked. If it is, it will return true, otherwise, it will return false.
-    const has_workouts = document.querySelector('#has_workouts:checked') ? true : false;
+    //const has_workouts = document.querySelector('#has_workouts:checked') ? true : false;
     // Send fetch request to add a new workout
     const response = await fetch(../api/exerciseRoute.js, {
       method: 'POST',
@@ -25,7 +25,9 @@ async function newFormHandler(event) {
     } else {
       alert('Failed to add workout');
     }
-  }
+
+//window.onload = alertFunction;
+
 // const newFormHandler = async (event) => {
 //   event.preventDefault();
 
