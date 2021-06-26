@@ -3,14 +3,10 @@ const { Exercise, User, Workout } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
-      const newUserData = await User.findByPk(1,{
-        include:[
-                {
-               model:User,through:{
-                 User_name, attributes:[]
-                  }
-                } 
-              ] 
+      const newUserData = await User.findOne({
+        where: {
+            id: id,
+        }
       });
       res.status(200).json({ newUserData });
   
@@ -23,7 +19,7 @@ router.get('/', async (req, res) => {
     //   });
     } catch (err) { 
     console.log(err)
-    res.status(500).json(err);
+    res.status(500).json(err+"MeowMix");
     } 
   });
 
