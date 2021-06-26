@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
     //   });
     } catch (err) { 
     console.log(err)
-    res.status(500).json(err+"MeowMix");
+    res.status(500).json(err+newUserData+User);
     } 
   });
 
