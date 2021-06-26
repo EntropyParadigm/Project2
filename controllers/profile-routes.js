@@ -12,8 +12,7 @@ router.get('/', async (req, res) => {
                 } 
               ] */
       //});
-        res.send('hello world');
-        console.log("test");
+        res.status(200).json({ message: 'Connected!' });
         //res.status(200).json({ newUserData });
          //console.log(newUserData);
   
@@ -41,8 +40,7 @@ router.get('/profile', async (req, res) => {
                 } 
               ] */
       //});
-        res.send('hello world');
-        console.log("test");
+        res.status(200).json({ message: 'Connected!' });
         //res.status(200).json({ newUserData });
          //console.log(newUserData);
   
