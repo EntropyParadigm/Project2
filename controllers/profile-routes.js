@@ -4,11 +4,11 @@ const { Exercise, User, Workout } = require('../models');
 router.get('/', async (req, res) => {
     try {
       const newUserData = await User.findByPk(1);
-      if (!profileData) {
+      if (!newUserData) {
       res.status(404).json({ message: 'No profile with ID found' });
       return;
     }
-    const profile = profileData.get({ plain: true });
+    const profile = newUserData.get({ plain: true });
     res.render('profile', { profile, loggedIn: true });
       
       res.status(200).json({ newUserData });
@@ -22,29 +22,7 @@ router.get('/', async (req, res) => {
     //   });
     } catch (err) { 
     console.log(err)
-    res.status(500).json(err+newUserData+User);
-    } 
-  });
-
-router.get('/profile', async (req, res) => {
-    try {
-      const newUserData = await User.findOne({
-        where: {
-            id: id,
-        }
-      });
-      res.status(200).json({ newUserData });
-  
-    //   req.session.save(() => {
-    //     req.session.userId = newUser.id;
-    //     // req.session.email = newUser.email;
-    //     // req.session.loggedIn = true;
-  
-    //     res.json(newUser);
-    //   });
-    } catch (err) { 
-    console.log(err)
-    res.status(500).json(err+"Meow");
+    res.status(500).json(err);
     } 
   });
 
