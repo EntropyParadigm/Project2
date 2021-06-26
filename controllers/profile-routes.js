@@ -3,7 +3,7 @@ const { Exercise, User, Workout } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
-      const newUser = await User.findByPk(1,{
+      const newUserData = await User.findByPk(1,{
         include:[
                 {
                model:User,through:{
@@ -12,8 +12,8 @@ router.get('/', async (req, res) => {
                 } 
               ] 
       });
-        res.status(200).json({ newUser });
-         console.log(newUser);
+        res.status(200).json({ newUserData });
+         console.log(newUserData);
   
     //   req.session.save(() => {
     //     req.session.userId = newUser.id;
@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
 
 router.get('/profile', async (req, res) => {
     try {
-      const newUser = await User.findByPk(1,{
+      const newUserData = await User.findByPk(1,{
         include:[
                 {
                model:User,through:{
@@ -39,8 +39,8 @@ router.get('/profile', async (req, res) => {
                 } 
               ] 
       });
-      res.status(200).json({ newUser });
-      console.log(newUser);
+      res.status(200).json({ newUserData });
+      console.log(newUserData);
   
     //   req.session.save(() => {
     //     req.session.userId = newUser.id;
