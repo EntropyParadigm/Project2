@@ -1,5 +1,5 @@
 const User = require('./User');
-const Exercise = require('./exercise');
+const Exercise = require('./Exercise');
 const Workout = require('./Workout');
 
 User.hasMany(Workout, {
