@@ -26,7 +26,6 @@ function callDatabase {
     } else {
       alert('Failed to add workout');
     }
-}
 
 window.onload = callDatabase;
 
