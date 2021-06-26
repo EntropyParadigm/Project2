@@ -7,8 +7,11 @@
     // The following is a ternary operator. It checks to see if workouts is checked. If it is, it will return true, otherwise, it will return false.
     //const has_workouts = document.querySelector('#has_workouts:checked') ? true : false;
     // Send fetch request to add a new workout
-function callDatabase() {
-    const response = await fetch(../api/exerciseRoute.js, {
+
+async function callDatabase() {
+
+  let promise = new Promise((resolve, reject) => {
+    let response = await fetch(../api/exerciseRoute.js, {
       method: 'POST',
       body: JSON.stringify({
         name,
@@ -20,8 +23,14 @@ function callDatabase() {
         'Content-Type': 'application/json',
       },
     });
+  });
+
+  let result = await promise; // wait until the promise resolves (*)
+
+  alert(result); // "done!"
 }
-window.onload = callDatabase;
+
+callDatabase();
     
     //if the workout is added, the 'all' template will be rerendered
     //if (response.ok) {
