@@ -21,7 +21,6 @@ router.get('/', async (req, res) => {
 router.get('/profile', checkAuth, async (req, res) => {
   try {
      const profileData = await User.findByPk(1);
-    });
 
     if (!profileData) {
       res.status(404).json({ message: 'No profile with ID found' });
