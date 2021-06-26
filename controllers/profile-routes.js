@@ -3,7 +3,7 @@ const { Exercise, User, Workout } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
-      const newUserData = await User.findByPk1);
+      const newUserData = await User.findByPk(1);
       if (!profileData) {
       res.status(404).json({ message: 'No profile with ID found' });
       return;
