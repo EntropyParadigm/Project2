@@ -3,11 +3,14 @@ const { Exercise, User, Workout } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
-      const newUserData = await User.findOne({
-        where: {
-            id: id,
-        }
-      });
+      const newUserData = await User.findByPk1);
+      if (!profileData) {
+      res.status(404).json({ message: 'No profile with ID found' });
+      return;
+    }
+    const profile = profileData.get({ plain: true });
+    res.render('profile', { profile, loggedIn: true });
+      
       res.status(200).json({ newUserData });
   
     //   req.session.save(() => {
